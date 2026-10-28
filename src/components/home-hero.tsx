@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "@/lib/gsap";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { SITE } from "@/lib/content";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 
@@ -13,7 +13,7 @@ export function HomeHero() {
 
   useGSAP(
     () => {
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduced = prefersReducedMotion();
       if (reduced) return;
 
       const q = gsap.utils.selector(root);

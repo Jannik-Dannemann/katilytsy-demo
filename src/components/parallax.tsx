@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { gsap } from "@/lib/gsap";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 type ParallaxProps = {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export function Parallax({ children, className = "", speed = 6 }: ParallaxProps)
   const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (prefersReducedMotion()) return;
     if (!wrapRef.current || !innerRef.current) return;
 
     const tween = gsap.fromTo(

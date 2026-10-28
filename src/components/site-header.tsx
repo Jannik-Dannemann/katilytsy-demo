@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { prefersReducedMotion } from "@/lib/gsap";
 import { NAV, SITE } from "@/lib/content";
 import { CartButton } from "@/components/cart-provider";
 import {
@@ -37,7 +38,7 @@ export function SiteHeader() {
   useEffect(() => {
     const overlay = menuRef.current;
     if (!overlay) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = prefersReducedMotion();
 
     if (menuOpen) {
       document.body.style.overflow = "hidden";

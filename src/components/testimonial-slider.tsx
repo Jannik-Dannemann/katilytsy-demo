@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "@/lib/gsap";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import type { Testimonial } from "@/lib/content";
 import { ArrowRight } from "@/components/icons";
 
@@ -21,7 +21,7 @@ export function TestimonialSlider({
   const current = testimonials[index];
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (prefersReducedMotion()) return;
     if (quoteRef.current) {
       gsap.fromTo(
         quoteRef.current,

@@ -2,13 +2,14 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 
 export function RevealProvider() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = prefersReducedMotion();
+    document.documentElement.dataset.motion = reduced ? "reduced" : "full";
     if (reduced) return;
 
     const tweens: gsap.core.Tween[] = [];
