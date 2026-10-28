@@ -240,17 +240,6 @@ export type Product = {
 
 export const PRODUCTS: Product[] = [
   {
-    id: "nyrkkeilytreeni",
-    name: "Nyrkkeilytreeni",
-    price: 30,
-    image: "/images/product-boxing.jpg",
-    alt: "Kati Lytsy nyrkkeilyhanskoissa",
-    description:
-      "Ohjattu nyrkkeilytreeni Katin kanssa. Hyvä tapa irrottautua arjesta ja haastaa kehoa uudella tavalla.",
-    includes: ["Ohjattu treeni", "Sopii myös aloittelijalle"],
-    category: "Treenit",
-  },
-  {
     id: "lytsyn-loylyt-1kk",
     name: "Lytsyn löylyt pienryhmävalmennus 1 kk",
     price: 140,

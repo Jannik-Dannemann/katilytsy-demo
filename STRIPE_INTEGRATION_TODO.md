@@ -18,7 +18,7 @@ What still has to change before going live (these are test-mode values, not plac
 |-------|---------------|-------------|
 | `STRIPE_SECRET_KEY` | `sk_test_...` in `.env.local` / Vercel | Live-mode secret key (`sk_live_...`). |
 | `STRIPE_WEBHOOK_SECRET` | `whsec_...` from the test-mode webhook endpoint | Signing secret of the live-mode webhook endpoint (`https://<domain>/api/stripe/webhook`). |
-| `STRIPE_PRICE_IDS[*]` | Test-mode `price_1UVX...` IDs | Live-mode Price IDs from https://dashboard.stripe.com/prices (recreate the 8 products in live mode). |
+| `STRIPE_PRICE_IDS[*]` | Test-mode `price_1UVX...` IDs | Live-mode Price IDs from https://dashboard.stripe.com/prices (recreate the 7 products in live mode). |
 | `RESEND_API_KEY` | Not set anywhere | Add a Resend API key, otherwise order and contact emails are only logged, never sent. |
 | `CONTACT_EMAIL`, `RESEND_FROM` | Default `kati@katilytsy.fi` | Confirm the real recipient and sender domain (verify the domain in Resend). |
 

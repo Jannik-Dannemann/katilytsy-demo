@@ -1,7 +1,6 @@
 import Stripe from "stripe";
 
 export const STRIPE_PRICE_IDS: Record<string, string> = {
-  nyrkkeilytreeni: "price_1UVXExF7ojNyFfuSRA3fQpqG",
   "lytsyn-loylyt-1kk": "price_1UVXFUF7ojNyFfuSD2xzk3pl",
   "ohjattu-treeni": "price_1UVXFhF7ojNyFfuSgSh9IM1i",
   "ohjattu-treeni-1x": "price_1UVXGBF7ojNyFfuS3wOUgDy1",
